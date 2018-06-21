@@ -1,7 +1,6 @@
 package pabe.com.webdriver;
 
 
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,6 +21,36 @@ public class ToolsqaPage extends PageObject {
 
     @FindBy(name = "firstname")
     private WebElement firstNameField;
+
+    @FindBy(name="lastname")
+    private WebElement lastNameField;
+
+    @FindBy(id="sex-0")
+    private WebElement sexMaleRadioButton;
+
+    @FindBy(id="sex-1")
+    private WebElement sexFeMaleRadioButton;
+
+    @FindBy(id="exp-0")
+    private WebElement yearsOfExperienceEqualsOne;
+
+    @FindBy(id="exp-1")
+    private WebElement yearsOfExperienceEqualsTwo;
+
+    @FindBy(id="exp-2")
+    private WebElement yearsOfExperienceEqualsThree;
+
+    @FindBy(id="exp-3")
+    private WebElement yearsOfExperienceEqualsFour;
+
+    @FindBy(id="exp-4")
+    private WebElement yearsOfExperienceEqualsFive;
+
+    @FindBy(id="exp-5")
+    private WebElement yearsOfExperienceEqualsSix;
+
+    @FindBy(id="exp-6")
+    private WebElement yearsOfExperienceEqualsSeven;
 
 
     public boolean isInitialized() {
@@ -46,7 +75,7 @@ public class ToolsqaPage extends PageObject {
         this.firstNameField = firstNameField;
     }
 
-    public void setFirstName(String firstName){
+    public void setFirstName(String firstName) {
         this.firstNameField.sendKeys(firstName);
     }
 
@@ -60,15 +89,9 @@ public class ToolsqaPage extends PageObject {
             textValue = "Value not filled in.";
         }
         return textValue;
-
-
     }
 
-
-    @Test
-    public void name() throws Exception {
+    public void enterFullCredentialsValidUserNetherlands(){
 
     }
-
-
 }
