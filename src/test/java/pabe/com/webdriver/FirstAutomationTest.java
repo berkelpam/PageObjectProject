@@ -33,37 +33,54 @@ public class FirstAutomationTest {
 //        //Step 5- Quit Driver
 //        driver.quit();
 //    }
+//    @Test
+//    //Start to write our test method. It should ends with "Test"
+//    public void setUp() {
+//
+//        //Step 1- Driver Instantiation: Instantiate driver object
+//        WebDriver driver = new SafariDriver();
+//
+//        //Test the toolsqa test site.
+//
+//        driver.navigate().to("http://toolsqa.com/automation-practice-form/");
+//
+//        ToolsqaPage toolsPage = new ToolsqaPage(driver);
+//
+//        if (toolsPage.isInitialized()) {
+//            if (toolsPage.elementsPresent()) {
+//
+//                verifyDutchUser();
+//            }
+//        }
+//
+//    }
+
     @Test
-    //Start to write our test method. It should ends with "Test"
-    public void setUp() {
+    public void verifyDutchUser(){
 
         //Step 1- Driver Instantiation: Instantiate driver object as FirefoxDriver
         WebDriver driver = new SafariDriver();
 
-        //Test the toolsqa test site.
-
         driver.navigate().to("http://toolsqa.com/automation-practice-form/");
-
         ToolsqaPage toolsPage = new ToolsqaPage(driver);
+        toolsPage.enterFullCredentialsValidUserNetherlands();
+        toolsPage.submitForm();
 
-        if (toolsPage.isInitialized()) {
-            if (toolsPage.elementsPresent()) {
-
-                toolsPage.setFirstName("Jan");
-                System.out.println(toolsPage.getFirstName());
-
-            }
-        }
-
+        driver.close();
+        driver.quit();
     }
 
+    @Test
+    public void verifiyAsianUser(){
+        //Step 1- Driver Instantiation: Instantiate driver object as FirefoxDriver
+        WebDriver driver = new SafariDriver();
 
-    //Step 4- Close Driver
-//        driver.close();
-//
-//    //Step 5- Quit Driver
-//        driver.quit();
-//}
+        driver.navigate().to("http://toolsqa.com/automation-practice-form/");
+        ToolsqaPage toolsPage = new ToolsqaPage(driver);
+        toolsPage.enterFullCredentialsValidUserAsia();
+        toolsPage.submitForm();
 
-
+        driver.close();
+        driver.quit();
+    }
 }
