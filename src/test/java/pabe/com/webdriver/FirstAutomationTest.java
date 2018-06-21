@@ -1,14 +1,11 @@
 package pabe.com.webdriver;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.safari.SafariDriver;package com.pambey.webdriver;
-
-//Info: When you write your code IntelliJ automatically adds required classes
-//Also you can select and add required classes by pressing ALT+Enter then select related class
-
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
+//Info: When you write your code IntelliJ automatically adds required classes
+//Also you can select and add required classes by pressing ALT+Enter then select related class
 
 /**
  * Created by ONUR BASKIRT on 26.08.2015.
@@ -43,48 +40,30 @@ public class FirstAutomationTest {
         //Step 1- Driver Instantiation: Instantiate driver object as FirefoxDriver
         WebDriver driver = new SafariDriver();
 
-        //Step 2- Navigation: Open a website
-        driver.navigate().to("https://www.google.com");
-//
-//        HomePage objHomePage = new HomePage(driver);
-//
-//        assert (objHomePage.isInitialized());
-//
-//        objHomePage.searchWebsite("CSS");
-//
-//        CookiesPage cookieWall = new CookiesPage(driver);
-//
-////        cookieWall.isInitalized();
-//        cookieWall.acceptCookies();
-//
-//        SearchPage objSearchPage=new SearchPage(driver);
-//
-//        assert (objSearchPage.isInitialized());
-//
-//        objHomePage.clickBeleggen();
-//
-//
-//
-//        CookiesPage objCookiesPage = new CookiesPage(driver);
-//
-//        assert (objCookiesPage.isInitalized());
+        //Test the toolsqa test site.
 
-//        objCookiesPage.acceptCookies();
+        driver.navigate().to("http://toolsqa.com/automation-practice-form/");
 
+        ToolsqaPage toolsPage = new ToolsqaPage(driver);
 
-        GoogleSearchPage googlePage = new GoogleSearchPage(driver);
+        if (toolsPage.isInitialized()) {
+            if (toolsPage.elementsPresent()) {
 
-        googlePage.searchFor("java for beginners");
+                toolsPage.setFirstName("Jan");
+                System.out.println(toolsPage.getFirstName());
 
-        GoogleResultPage googleResultsPage = new GoogleResultPage(driver);
+            }
+        }
 
-        assert (googleResultsPage.isInitialized());
-
-
-        //Step 4- Close Driver
-        driver.close();
-
-        //Step 5- Quit Driver
-        driver.quit();
     }
+
+
+    //Step 4- Close Driver
+//        driver.close();
+//
+//    //Step 5- Quit Driver
+//        driver.quit();
+//}
+
+
 }
