@@ -160,11 +160,26 @@ public class ToolsqaPage extends PageObject {
         this.firstNameField.sendKeys("田中太郎");
         this.lastNameField.sendKeys("東海林賢蔵");
         this.sexMaleRadioButton.click();
-        this.yearsOfExperienceEqualsFive.click();
+        this.yearsOfExperienceEqualsSix.click();
+        this.birthDate.sendKeys("09-14-1987");
+        this.professionManualTester.click();
+        this.continentList.selectByVisibleText("Asia");
+        this.toolSelenium.click();
+
+    }
+
+    public void enterFullCredentialsValidUserAustralia(){
+
+        clearFieldValues();
+
+        this.firstNameField.sendKeys("Jenny");
+        this.lastNameField.sendKeys("Jones");
+        this.sexFeMaleRadioButton.click();
+        this.yearsOfExperienceEqualsTwo.click();
         this.birthDate.sendKeys("09-14-1987");
         this.professionAutomationTester.click();
         this.continentList.selectByVisibleText("Asia");
-        this.toolQTP.click();
+        this.toolSeleniumDriver.click();
 
     }
 
