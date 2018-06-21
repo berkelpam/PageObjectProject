@@ -75,13 +75,43 @@ public class FirstAutomationTest {
 
         GoogleResultPage googleResultsPage = new GoogleResultPage(driver);
 
-//        assert (googleResultsPage.isInitialized());
+        if (googleResultsPage.isInitialized()) {
+            System.out.println("ResultForm is displayed, so SearchPage is Initialized.");
+
+            //verify results displayed
 
 
-        //Step 4- Close Driver
-        driver.close();
 
-        //Step 5- Quit Driver
-        driver.quit();
+
+//            if (googleResultsPage.returnedResults()) {
+//                System.out.println("Results returned");
+//                System.out.println(googleResultsPage.getResultStatsText());
+//            }
+        }
+
+        //Test the toolsqa test site.
+
+        driver.navigate().to("http://toolsqa.com/automation-practice-form/");
+
+        ToolsqaPage toolsPage = new ToolsqaPage(driver);
+
+        if (toolsPage.isInitialized()){
+            System.out.println("initialization complete..or not..");
+            if (toolsPage.elementsPresent()){
+                System.out.println("elements present");
+            }
+        }
+
+
     }
+
+
+    //Step 4- Close Driver
+//        driver.close();
+//
+//    //Step 5- Quit Driver
+//        driver.quit();
+//}
+
+
 }
