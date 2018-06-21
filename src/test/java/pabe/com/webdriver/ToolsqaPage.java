@@ -4,6 +4,7 @@ package pabe.com.webdriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 /**
  * Created by pauljava on 21/06/2018.
@@ -72,6 +73,7 @@ public class ToolsqaPage extends PageObject {
 
     @FindBy(id="continents")
     private WebElement contintent;
+    Select continentList= new Select(contintent);
 
     @FindBy(id="submit")
     private WebElement submitButton;
@@ -115,7 +117,62 @@ public class ToolsqaPage extends PageObject {
         return textValue;
     }
 
+    public void clearFieldValues(){
+        this.firstNameField.clear();
+        this.lastNameField.clear();
+        this.sexFeMaleRadioButton.clear();
+        this.sexMaleRadioButton.clear();
+        this.yearsOfExperienceEqualsOne.clear();
+        this.yearsOfExperienceEqualsTwo.clear();
+        this.yearsOfExperienceEqualsThree.clear();
+        this.yearsOfExperienceEqualsFour.clear();
+        this.yearsOfExperienceEqualsFive.clear();
+        this.yearsOfExperienceEqualsSix.clear();
+        this.yearsOfExperienceEqualsSeven.clear();
+        this.birthDate.clear();
+        this.professionAutomationTester.clear();
+        this.professionManualTester.clear();
+        this.toolQTP.clear();
+        this.toolSelenium.clear();
+        this.toolSeleniumDriver.clear();
+        this.contintent.clear();
+    }
+
     public void enterFullCredentialsValidUserNetherlands(){
+
+        clearFieldValues();
+
+        this.firstNameField.sendKeys("Jan");
+        this.lastNameField.sendKeys("Janssen");
+        this.sexMaleRadioButton.click();
+        this.yearsOfExperienceEqualsFive.click();
+        this.birthDate.sendKeys("11-11-1911");
+        this.professionAutomationTester.click();
+        this.continentList.selectByVisibleText("Europe");
+        this.toolQTP.click();
+
+    }
+
+    public void enterFullCredentialsValidUserAsia(){
+
+        clearFieldValues();
+
+        this.firstNameField.sendKeys("田中太郎");
+        this.lastNameField.sendKeys("東海林賢蔵");
+        this.sexMaleRadioButton.click();
+        this.yearsOfExperienceEqualsFive.click();
+        this.birthDate.sendKeys("09-14-1987");
+        this.professionAutomationTester.click();
+        this.continentList.selectByVisibleText("Asia");
+        this.toolQTP.click();
+
+    }
+
+    public void submitForm(){
+        this.submitButton.click();
+    }
+
+    private void verifyElements(){
 
     }
 }
