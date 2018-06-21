@@ -12,7 +12,6 @@ public class FirstAutomationTest {
     @Test
     public void verifyDutchUser(){
 
-        //Step 1- Driver Instantiation: Instantiate driver object as FirefoxDriver
         WebDriver driver = new SafariDriver();
 
         driver.navigate().to("http://toolsqa.com/automation-practice-form/");
@@ -26,7 +25,7 @@ public class FirstAutomationTest {
 
     @Test
     public void verifiyAsianUser(){
-        //Step 1- Driver Instantiation: Instantiate driver object as FirefoxDriver
+
         WebDriver driver = new SafariDriver();
 
         driver.navigate().to("http://toolsqa.com/automation-practice-form/");
