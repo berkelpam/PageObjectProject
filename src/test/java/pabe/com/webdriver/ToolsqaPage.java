@@ -14,36 +14,55 @@ public class ToolsqaPage extends PageObject {
         super(driver);
     }
 
-    @FindBy (id="page")
+    @FindBy(id = "page")
     private WebElement page;
 
-    @FindBy (partialLinkText = "Partial Link")
+    @FindBy(partialLinkText = "Partial Link")
     private WebElement partialLink;
 
-    @FindBy (name="firstname")
+    @FindBy(name = "firstname")
     private WebElement firstNameField;
 
 
-    public boolean isInitialized(){
+    public boolean isInitialized() {
 
         if (page.isDisplayed()) {
             System.out.println("Tools QA Page is Initalized.");
-        }
-        else{
+        } else {
             System.out.println("Tools QA Page is not initialized.");
         }
 
         return page.isDisplayed();
     }
 
-    public boolean elementsPresent(){
-        if (this.partialLink.isDisplayed()){
+    public boolean elementsPresent() {
+        if (this.partialLink.isDisplayed() && this.firstNameField.isDisplayed()) {
             return true;
         }
         return false;
     }
 
+    public void setFirstNameField(WebElement firstNameField) {
+        this.firstNameField = firstNameField;
+    }
 
+    public void setFirstName(String firstName){
+        this.firstNameField.sendKeys(firstName);
+    }
+
+    public String getFirstName() {
+
+        String textValue;
+
+        if (firstNameField.getText().length() > 0) {
+            textValue = firstNameField.getText();
+        } else {
+            textValue = "Value not filled in.";
+        }
+        return textValue;
+
+
+    }
 
 
     @Test

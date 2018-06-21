@@ -40,68 +40,20 @@ public class FirstAutomationTest {
         //Step 1- Driver Instantiation: Instantiate driver object as FirefoxDriver
         WebDriver driver = new SafariDriver();
 
-        //Step 2- Navigation: Open a website
-        driver.navigate().to("https://www.google.com");
-//
-//        HomePage objHomePage = new HomePage(driver);
-//
-//        assert (objHomePage.isInitialized());
-//
-//        objHomePage.searchWebsite("CSS");
-//
-//        CookiesPage cookieWall = new CookiesPage(driver);
-//
-////        cookieWall.isInitalized();
-//        cookieWall.acceptCookies();
-//
-//        SearchPage objSearchPage=new SearchPage(driver);
-//
-//        assert (objSearchPage.isInitialized());
-//
-//        objHomePage.clickBeleggen();
-//
-//
-//
-//        CookiesPage objCookiesPage = new CookiesPage(driver);
-//
-//        assert (objCookiesPage.isInitalized());
-
-//        objCookiesPage.acceptCookies();
-
-
-        GoogleSearchPage googlePage = new GoogleSearchPage(driver);
-
-        googlePage.searchFor("java for beginners");
-
-        GoogleResultPage googleResultsPage = new GoogleResultPage(driver);
-
-        if (googleResultsPage.isInitialized()) {
-            System.out.println("ResultForm is displayed, so SearchPage is Initialized.");
-
-            //verify results displayed
-
-
-
-
-//            if (googleResultsPage.returnedResults()) {
-//                System.out.println("Results returned");
-//                System.out.println(googleResultsPage.getResultStatsText());
-//            }
-        }
-
         //Test the toolsqa test site.
 
         driver.navigate().to("http://toolsqa.com/automation-practice-form/");
 
         ToolsqaPage toolsPage = new ToolsqaPage(driver);
 
-        if (toolsPage.isInitialized()){
-            System.out.println("initialization complete..or not..");
-            if (toolsPage.elementsPresent()){
-                System.out.println("elements present");
+        if (toolsPage.isInitialized()) {
+            if (toolsPage.elementsPresent()) {
+
+                toolsPage.setFirstName("Jan");
+                System.out.println(toolsPage.getFirstName());
+
             }
         }
-
 
     }
 
