@@ -1,14 +1,11 @@
 package pabe.com.webdriver;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.safari.SafariDriver;package com.pambey.webdriver;
-
-//Info: When you write your code IntelliJ automatically adds required classes
-//Also you can select and add required classes by pressing ALT+Enter then select related class
-
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
+//Info: When you write your code IntelliJ automatically adds required classes
+//Also you can select and add required classes by pressing ALT+Enter then select related class
 
 /**
  * Created by ONUR BASKIRT on 26.08.2015.
@@ -78,7 +75,7 @@ public class FirstAutomationTest {
 
         GoogleResultPage googleResultsPage = new GoogleResultPage(driver);
 
-        assert (googleResultsPage.isInitialized());
+//        assert (googleResultsPage.isInitialized());
 
 
         //Step 4- Close Driver
