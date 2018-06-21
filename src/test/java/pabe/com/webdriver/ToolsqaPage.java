@@ -52,6 +52,29 @@ public class ToolsqaPage extends PageObject {
     @FindBy(id="exp-6")
     private WebElement yearsOfExperienceEqualsSeven;
 
+    @FindBy(id="datepicker")
+    private WebElement birthDate;
+
+    @FindBy(id="profession-0")
+    private WebElement professionManualTester;
+
+    @FindBy(id="profession-0")
+    private WebElement professionAutomationTester;
+
+    @FindBy(id="tool-0")
+    private WebElement toolQTP;
+
+    @FindBy(id="tool-1")
+    private WebElement toolSelenium;
+
+    @FindBy(id="tool-2")
+    private WebElement toolSeleniumDriver;
+
+    @FindBy(id="continents")
+    private WebElement contintent;
+
+    @FindBy(id="submit")
+    private WebElement submitButton;
 
     public boolean isInitialized() {
 
@@ -63,6 +86,7 @@ public class ToolsqaPage extends PageObject {
 
         return page.isDisplayed();
     }
+
 
     public boolean elementsPresent() {
         if (this.partialLink.isDisplayed() && this.firstNameField.isDisplayed()) {
