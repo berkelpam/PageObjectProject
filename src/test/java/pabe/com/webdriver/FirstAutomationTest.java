@@ -81,21 +81,5 @@ public class FirstAutomationTest {
         driver.close();
         driver.quit();
     }
-
-    @Test
-    public void verifyLoadingAlertHandlingPage() {
-
-        WebDriver driver = new SafariDriver();
-
-        driver.navigate().to("http://toolsqa.com/handling-alerts-using-selenium-webdriver/");
-        ToolsqaAlertHandlingPage toolsqaAlertHandlingPage = new ToolsqaAlertHandlingPage(driver);
-
-        if (toolsqaAlertHandlingPage.isInitialized()){
-            System.out.println("init=true;");
-        }
-
-        driver.close();
-        driver.quit();
-    }
 }
 
