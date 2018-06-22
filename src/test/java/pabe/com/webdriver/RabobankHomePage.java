@@ -1,8 +1,11 @@
 package pabe.com.webdriver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by pauljava on 22/06/2018.
@@ -14,7 +17,7 @@ public class RabobankHomePage extends PageObject{
     public RabobankHomePage(WebDriver driver) {
         super(driver);
         driver.navigate().to("https://www.rabobank.nl/particulieren/");
-//        isPageTitleCorrect(PAGETITLE);
+        waitForClassNameVisible("homepage");
     }
 
     @FindBy (className = "homepage")
@@ -45,7 +48,18 @@ public class RabobankHomePage extends PageObject{
         this.overstapServiceLink.click();
     }
 
-//    private boolean isPageTitleCorrect(String pageTitle){
-//        return
-//    }
+    public void waitForCssVisible(String css) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.or(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(css))));
+    }
+
+    public void waitForIdVisible(String id) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.or(ExpectedConditions.visibilityOfElementLocated(By.id(id))));
+    }
+
+    public void waitForClassNameVisible(String className) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.or(ExpectedConditions.visibilityOfElementLocated(By.className(className))));
+    }
 }

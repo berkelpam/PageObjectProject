@@ -34,7 +34,7 @@ public class RabobankTest {
 
         WebDriver driver = new SafariDriver();
 
-        driver.navigate().to("https://www.rabobank.nl/particulieren/");
+//        driver.navigate().to("https://www.rabobank.nl/particulieren/");
 
         ((JavascriptExecutor) driver).executeScript("var myDate = new Date(); \n" +
                 "myDate.setMonth(myDate.getMonth() + 12); \"RABO_PSL=3;expires=\" + myDate + \";domain=.rabobank.nl;path=/\";");
