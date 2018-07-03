@@ -17,7 +17,7 @@ public class RabobankHomePage extends PageObject{
     public RabobankHomePage(WebDriver driver) {
         super(driver);
         driver.navigate().to("https://www.rabobank.nl/particulieren/");
-        waitForClassNameVisible("homepage");
+        super.waitForClassNameVisible("homepage");
     }
 
     @FindBy (className = "homepage")
@@ -29,8 +29,6 @@ public class RabobankHomePage extends PageObject{
     @FindBy(id="ra_searchfield")
     private WebElement searchbox;
 
-    @FindBy(id="lnk_57819_1220d.4b8.128dea27.107bd9d7")
-    private WebElement overstapServiceLink;
 
     public boolean isInitialized(){
         return this.homePage.isDisplayed();
@@ -44,9 +42,6 @@ public class RabobankHomePage extends PageObject{
         this.searchbox.click();
     }
 
-    public void clickOverstapService(){
-        this.overstapServiceLink.click();
-    }
 
     public void waitForCssVisible(String css) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -58,8 +53,8 @@ public class RabobankHomePage extends PageObject{
         wait.until(ExpectedConditions.or(ExpectedConditions.visibilityOfElementLocated(By.id(id))));
     }
 
-    public void waitForClassNameVisible(String className) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.or(ExpectedConditions.visibilityOfElementLocated(By.className(className))));
-    }
+//    public void waitForClassNameVisible(String className) {
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        wait.until(ExpectedConditions.or(ExpectedConditions.visibilityOfElementLocated(By.className(className))));
+//    }
 }

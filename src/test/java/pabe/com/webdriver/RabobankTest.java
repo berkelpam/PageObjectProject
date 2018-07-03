@@ -34,8 +34,6 @@ public class RabobankTest {
 
         WebDriver driver = new SafariDriver();
 
-//        driver.navigate().to("https://www.rabobank.nl/particulieren/");
-
         ((JavascriptExecutor) driver).executeScript("var myDate = new Date(); \n" +
                 "myDate.setMonth(myDate.getMonth() + 12); \"RABO_PSL=3;expires=\" + myDate + \";domain=.rabobank.nl;path=/\";");
 
@@ -43,13 +41,17 @@ public class RabobankTest {
         RabobankHomePage homePage = new RabobankHomePage(driver);
 
         homePage.clickSearchBox();
-        homePage.clickOverstapService();
+//        homePage.clickOverstapService();
 
         System.out.println(driver.getTitle());
 
         RabobankOverstappenPage rabobankOverstappenPage = new RabobankOverstappenPage(driver);
 
+        RabobankZeZaPage zezaPage = new RabobankZeZaPage(driver);
 
+        System.out.println(driver.getTitle());
+
+        assert (driver.getTitle().equals("ZekerVanJeZaak, het verzekeringspakket voor ondernemers - Rabobank"));
 
         driver.close();
         driver.quit();
